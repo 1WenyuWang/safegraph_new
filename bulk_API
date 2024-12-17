@@ -1,0 +1,3 @@
+pip install deweydatapy@git+https://github.com/Dewey-Data/deweydatapy
+
+import deweydatapy as ddp
