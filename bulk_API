@@ -1,3 +1,18 @@
 pip install deweydatapy@git+https://github.com/Dewey-Data/deweydatapy
 
 import deweydatapy as ddp
+
+# API Key
+apikey = "skzBSdbW.FP1OGjRTT9NhqwB6TMVtpiFyDrdC2dDSVOnuG7aKqSPd0f3SuRaf1XKp"
+
+# Product path
+pp_ = "https://app.deweydata.io/external-api/v3/products/eb046f6d-0dfc-448c-8da4-8b08275507a0/files"
+
+meta = ddp.get_meta(apikey, pp_, print_meta = True) # returns a dataframe with meta information
+
+files_df = ddp.get_file_list(apikey, pp_, 
+                             start_date = '2019-01-01',
+                             end_date = '2019-04-01',
+                             print_info = True);
+
+ddp.download_files(files_df, "C:/Users/123/Desktop/2Data Inquiry/new", skip_exists = True)
